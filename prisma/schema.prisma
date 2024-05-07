@@ -17,6 +17,7 @@ model User {
   password String @db.VarChar(50)
   otp String @db.VarChar(10)
   role Role @default(SUBSCRIBER)
+  user_status String?
   comments Comment[]
   createdAt DateTime @default(now()) @db.Timestamp(0)
   updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
