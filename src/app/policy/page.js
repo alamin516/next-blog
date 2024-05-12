@@ -13,6 +13,12 @@ async function getData(id) {
   return {policy: policy};
 }
 
+export const metadata = {
+  title: 'Privacy Policy',
+  description: 'Create a sleek and modern blog website with Tailwind CSS, featuring clear typography, vibrant colors, and responsive layouts. Incorporate user-friendly functionalities like search, pagination, and featured posts to enhance user engagement and navigation.',
+}
+
+
 const page = async() => {
   const data = await getData();
 

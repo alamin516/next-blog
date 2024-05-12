@@ -18,6 +18,10 @@ async function getData() {
   return { slider: slider, featured:featured, posts:posts};
 }
 
+export const metadata = {
+  title: 'Explore Your New Innovation',
+  description: 'Create a sleek and modern blog website with Tailwind CSS, featuring clear typography, vibrant colors, and responsive layouts. Incorporate user-friendly functionalities like search, pagination, and featured posts to enhance user engagement and navigation.',
+}
 
 export default async function Home() {
   const data = await getData();

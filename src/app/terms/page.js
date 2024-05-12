@@ -14,6 +14,12 @@ async function getData(id) {
   return {terms: terms};
 }
 
+
+export const metadata = {
+  title: 'Terms and Conditions',
+  description: 'Create a sleek and modern blog website with Tailwind CSS, featuring clear typography, vibrant colors, and responsive layouts. Incorporate user-friendly functionalities like search, pagination, and featured posts to enhance user engagement and navigation.',
+}
+
 const page = async() => {
   const data = await getData();
 

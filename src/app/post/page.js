@@ -22,9 +22,11 @@ async function getData(id) {
   return {popular: popular, post: post, comments: comments};
 }
 
+
 const page = async({searchParams}) => {
   const id = searchParams['id'];
   const data = await getData(id)
+
 
 
   const cookieStore = cookies();
