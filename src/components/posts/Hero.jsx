@@ -1,9 +1,5 @@
-
 import PostSlider from "./PostSlider";
-
 const Hero = ({data}) => {
-
-
   return (
     <div className="container mx-auto">
       <div className="flex flex-wrap items-start">

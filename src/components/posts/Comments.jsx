@@ -5,6 +5,9 @@ import CommentForm from "./CommentForm";
 const Comments = ({ postID, data, isLogin }) => {
   const [activeTab, setActiveTab] = useState("comments");
 
+
+
+
   return (
     <div className="overflow-hidden rounded-xl border border-gray-100 bg-gray-50 p-1 mt-5">
       <ul className="flex items-center gap-2 text-sm font-medium">
@@ -59,7 +62,7 @@ const Comments = ({ postID, data, isLogin }) => {
               <div className="login-message">
                 Please login to leave a comment.
               </div>
-              <a href="/login">Login</a>
+              <a href="/login" state="">Login</a>
             </div>
           )}
         </div>

@@ -3,9 +3,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import HeaderDropDown from "./HeaderDropDown";
 import MobileMenu from "./MobileMenu";
+import { usePathname } from "next/navigation";
 
 const AppNavbar = ({ data, isLogin }) => {
   const [keywords, setKeywords] = useState("");
+  const pathname = usePathname();
 
   return (
     <header className="backdrop-blur bg-white/60 left-0 fixed md:transition-all right-0 shadow-sm top-0 z-50">
@@ -29,13 +31,17 @@ const AppNavbar = ({ data, isLogin }) => {
           </Link>
         </div>
         <ul className="items-stretch hidden space-x-3 lg:flex text-[#334155]">
-          <Link
-            rel="noopener noreferrer"
-            href={`/`}
-            className="flex items-center px-4 -mb-1 hover:text-blue-500 font-semibold"
-          >
-            Home
-          </Link>
+          <li className="flex">
+            <Link
+              rel="noopener noreferrer"
+              href={`/`}
+              className={`${
+                pathname === "/" ? "text-blue-500" : ""
+              } first-line:flex items-center px-4 -mb-1 hover:text-blue-500 font-semibold`}
+            >
+              Home
+            </Link>
+          </li>
           {data.categories.map((item, i) => {
             return (
               <li className="flex" key={i}>

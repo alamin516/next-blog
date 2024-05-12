@@ -36,6 +36,9 @@ const LoginForm = () => {
       {
         res.status === "fail" && ErrorToast("Credential Fail");
       }
+      {
+        res.status === "login failed" && ErrorToast(res.data);
+      }
     }
   };
 

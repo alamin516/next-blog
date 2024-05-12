@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import SubmitButton from "@/components/master/SubmitButton";
 import { ErrorToast, IsEmail, SuccessToast } from "@/utility/FormValidation";
+import TornadoLoading from "../master/TornadoLoading";
 
 const Subscribe = () => {
   const [data, setData] = useState({ email: "" });

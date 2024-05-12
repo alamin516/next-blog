@@ -96,7 +96,6 @@ export async function SendEmail(EmailTo, EmailText, EmailSubject) {
                 
                     </div>
                     <div className="content">
-                        <p>Your OTP code is:</p>
                         <h2>${EmailText}</h2>
                     </div>
                     <div className="footer">

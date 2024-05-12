@@ -26,8 +26,6 @@ const page = async({searchParams}) => {
   const id = searchParams['id'];
   const data = await getData(id)
 
-  console.log(data['comments'])
-
 
   const cookieStore = cookies();
   const token = cookieStore.get("token");

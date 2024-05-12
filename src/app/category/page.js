@@ -1,8 +1,7 @@
 import EmptyData from "@/components/master/EmptyData";
 import PlainLayout from "@/components/master/PlainLayout";
-import PopularPosts from "@/components/posts/PopularPosts";
+import Sidebar from "@/components/master/Sidebar";
 import PostsList from "@/components/posts/PostsLists";
-import Subscribe from "@/components/posts/Subscribe";
 import React from "react";
 
 async function getData(id) {
@@ -11,12 +10,7 @@ async function getData(id) {
       await fetch(`${process.env.BASE_URL}/api/posts/category?catID=${id}`)
     ).json()
   )["data"];
-  let popular = (
-    await (
-      await fetch(`${process.env.BASE_URL}/api/posts/type?type=popular`)
-    ).json()
-  )["data"];
-  return { posts: posts, popular: popular };
+  return { posts: posts};
 }
 
 const Page = async ({ searchParams }) => {
@@ -36,8 +30,7 @@ const Page = async ({ searchParams }) => {
             )}
           </div>
           <div className="w-full md:w-3/12 sm:w-full px-3 md:mt-0 mt-10">
-            <PopularPosts data={data} />
-            <Subscribe />
+          <Sidebar/>
           </div>
         </div>
       </div>

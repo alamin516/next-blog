@@ -31,7 +31,7 @@ export async function POST(req, res) {
     const verifyUrl = `${process.env.BASE_URL}/user/activate?email=${newUser.email}&otp=${newUser.otp}`
 
 
-    let EmailText = `Your verification url: ${verifyUrl}`;
+    let EmailText = `Your verification url: <a href="${verifyUrl}" target="_blank">${verifyUrl}</a>`;
     let EmailSubject = `Email Verification`;
     await SendEmail(email, EmailText, EmailSubject);
 

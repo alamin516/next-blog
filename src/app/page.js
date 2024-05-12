@@ -1,8 +1,7 @@
 import PlainLayout from "@/components/master/PlainLayout";
+import Sidebar from "@/components/master/Sidebar";
 import Hero from "@/components/posts/Hero";
-import PopularPosts from "@/components/posts/PopularPosts";
 import PostsList from "@/components/posts/PostsLists";
-import Subscribe from "@/components/posts/Subscribe";
 
 
 async function getData() {
@@ -12,14 +11,11 @@ async function getData() {
   let featured = (
     await (await fetch(`${process.env.BASE_URL}/api/posts/type?type=featured`)).json()
   )["data"];
-  let popular = (
-    await (await fetch(`${process.env.BASE_URL}/api/posts/type?type=popular`)).json()
-  )["data"];
   let posts = (
     await (await fetch(`${process.env.BASE_URL}/api/posts/latest`)).json()
   )["data"];
 
-  return { slider: slider, featured:featured, popular:popular, posts:posts};
+  return { slider: slider, featured:featured, posts:posts};
 }
 
 
@@ -39,8 +35,7 @@ export default async function Home() {
               <PostsList data={data["posts"]}/>
             </div>
             <div className="w-full md:w-3/12 sm:w-full px-3">
-              <PopularPosts data={data}/>
-              <Subscribe />
+              <Sidebar/>
             </div>
           </div>
         </div>

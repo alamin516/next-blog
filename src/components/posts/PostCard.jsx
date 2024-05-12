@@ -10,7 +10,7 @@ const PostCard = ({post}) => {
     >
       <Link href={`/post?id=${post["id"]}`}>
         <img
-          src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+          src={post['img1']}
           className="aspect-video w-full object-cover"
           alt=""
         />
