@@ -7,10 +7,9 @@ export async function GET(req, res) {
     const { searchParams } = new URL(req.url);
     const type = searchParams.get("type");
 
-    console.log(type)
-
     const result = await prisma.posts.findMany({
       where: { type: type },
+      orderBy: { createdAt: "desc" },
       select: {
         id: true,
         title: true,

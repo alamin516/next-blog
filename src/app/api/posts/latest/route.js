@@ -7,7 +7,6 @@ export async function GET(req, res) {
     const prisma = new PrismaClient();
 
     const result = await prisma.posts.findMany({
-      take: 12,
       orderBy: { createdAt: "desc" },
       select: {
         id: true,

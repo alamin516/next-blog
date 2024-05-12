@@ -2,15 +2,14 @@ import Link from "next/link";
 import React from "react";
 import PostDate from "./PostDate";
 
-const PostCard = ({post}) => {
+const PostCard = ({ post }) => {
+  const keywords = post.keywords.split(",");
+
   return (
-    <div
-      
-      className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow"
-    >
+    <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow">
       <Link href={`/post?id=${post["id"]}`}>
         <img
-          src={post['img1']}
+          src={post["img1"]}
           className="aspect-video w-full object-cover"
           alt=""
         />
@@ -32,18 +31,18 @@ const PostCard = ({post}) => {
         </p>
         {post["keywords"] && (
           <div className="mt-4 flex gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">
-              {" "}
-              Design{" "}
-            </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
-              {" "}
-              Product{" "}
-            </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-orange-50 px-2 py-1 text-xs font-semibold text-orange-600">
-              {" "}
-              Develop{" "}
-            </span>
+            {keywords.map((keyword, index) => (
+              <span
+                key={index}
+                className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold ${
+                  index % 2 === 0
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-green-600 bg-green-50"
+                }`}
+              >
+                {keyword.trim()}
+              </span>
+            ))}
           </div>
         )}
       </div>
