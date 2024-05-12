@@ -13,7 +13,7 @@ export async function POST(req, res) {
     if (isExistUser?.length === 0) {
       return NextResponse.json({ status: "fail", data: "User doesn't exist!" });
     } else {
-      if (isExistUser.user_status === "verified") {
+      if (isExistUser?.user_status === "verified") {
         let token = await CreateToken(isExistUser["email"], isExistUser["id"]);
         let expireDuration = new Date(Date.now() + 24 * 60 * 60 * 1000);
         const cookieString = `token=${token}; expires=${expireDuration.toUTCString()}; path=/`;

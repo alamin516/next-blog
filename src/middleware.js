@@ -6,6 +6,9 @@ export async function middleware(req, res){
         let token = req.cookies.get('token');
         let payload = await VerifyToken(token['value'])
 
+        console.log(token)
+
+
         const requestHeader = new Headers(req.headers);
         requestHeader.set('email', payload['email'])
         requestHeader.set('id', payload['id'])
@@ -32,7 +35,6 @@ export const config = {
         '/dashboard/posts',
         '/dashboard/users',
         '/api/comments/manage',
-        '/api/user/profile'
     ]
 }
 

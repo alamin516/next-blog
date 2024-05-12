@@ -7,6 +7,7 @@ export async function GET(req, res) {
     let headerList = headers();
     let id = parseInt(headerList.get("id"));
 
+
     if(!id){
       return NextResponse.json({status: "fail", message: 'Please login before commenting.'})
     }
@@ -16,7 +17,7 @@ export async function GET(req, res) {
     const result = await prisma.comment.findMany({
       where: { userID: id },
       include: {
-        news_list: { select: { title: true } },
+        post: { select: { title: true } },
       },
     });
 
@@ -38,7 +39,6 @@ export async function POST(req, res) {
     let reqBody = await req.json();
     reqBody.userID = id;
 
-    console.log(id)
 
     const prisma = new PrismaClient();
 
