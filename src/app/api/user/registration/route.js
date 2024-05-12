@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { SendEmail } from "@/utility/EmailVerify";
-import { IsEmail } from "@/utility/FormValidation";
 
 export async function POST(req, res) {
   try {
@@ -43,6 +42,9 @@ export async function POST(req, res) {
     
   }
 }
+
+
+
 
 
 

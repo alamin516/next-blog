@@ -1,10 +1,10 @@
 import PlainLayout from "@/components/master/PlainLayout";
-import LoginForm from "@/components/user/LoginForm";
+import SignUpForm from "@/components/user/SignUpForm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import React from "react";
 
-const Login = () => {
+const SignUp = () => {
   const cookieStore = cookies()
   const token = cookieStore.get('token')
 
@@ -14,9 +14,9 @@ const Login = () => {
 
   return (
     <PlainLayout>
-      <LoginForm />
+      <SignUpForm />
     </PlainLayout>
   );
 };
 
-export default Login;
+export default SignUp;

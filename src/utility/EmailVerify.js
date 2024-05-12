@@ -89,18 +89,18 @@ export async function SendEmail(EmailTo, EmailText, EmailSubject) {
             </head>
             
             <body>
-                <div class="container">
-                    <div class="header">
+                <div className="container">
+                    <div className="header">
                         <h1>Welcome to Our Blog Portal!</h1>
                         <h3>Email Verification Code</h3>
                 
                     </div>
-                    <div class="content">
+                    <div className="content">
                         <p>Your OTP code is:</p>
                         <h2>${EmailText}</h2>
                     </div>
-                    <div class="footer">
-                        <img src="https://example.com/logo.png" alt="Company Logo" class="logo">
+                    <div className="footer">
+                        <img src="https://example.com/logo.png" alt="Company Logo" className="logo">
                         <p>Company Name</p>
                         <p>123 Street, City, Country</p>
                         <p>Email: info@example.com</p>

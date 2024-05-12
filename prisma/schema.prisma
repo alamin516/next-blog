@@ -30,10 +30,10 @@ model Category {
   slug      String      @unique @db.VarChar(100)
   createdAt DateTime    @default(now()) @db.Timestamp(0)
   updatedAt DateTime    @default(now()) @updatedAt @db.Timestamp(0)
-  newsList  News[]    
+  postList  Posts[]    
 }
 
-model News {
+model Posts {
   id         Int         @id @default(autoincrement())
   title      String      @db.VarChar(100)
   slug       String      @unique @db.VarChar(100)
@@ -58,7 +58,7 @@ model Comment {
   userID       Int
   postID       Int
   user         User        @relation(fields: [userID], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  news         News        @relation(fields: [postID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  post         Posts        @relation(fields: [postID], references: [id], onDelete: Restrict, onUpdate: Cascade)
   description  String      @db.VarChar(1000)
   createdAt    DateTime    @default(now()) @db.Timestamp(0)
   updatedAt    DateTime    @default(now()) @updatedAt @db.Timestamp(0)
